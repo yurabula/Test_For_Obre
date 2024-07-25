@@ -1,3 +1,5 @@
+import "./Login.css"
+
 import { useState } from "react";
 
 const Login = () => {
@@ -21,9 +23,9 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <form >
-        <label>kss</label>
+    <div className="login">
+      <form className="loginForm">
+      <h2 className="loginTitle">Login</h2>
         <input
           value={userData.email}
           type="email"
@@ -38,7 +40,9 @@ const Login = () => {
           placeholder="Enter your password here"
           className=""
         ></input>
-        <button onClick={handleFormSubmit}></button>
+        <p>Forgot password?</p>
+        <button onClick={handleFormSubmit}>Login</button>
+        <p>Dont have account? Register now</p>
       </form>
     </div>
   );
