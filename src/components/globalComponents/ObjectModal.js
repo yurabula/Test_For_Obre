@@ -2,7 +2,7 @@ import { useState } from "react";
 import { addItemToLocalStorage, getFromLocalStorage } from "../../localStorage/localStorage";
 import "./ObjectModal.css"
 
-const ObjectModal = ({addjob}) => {
+const ObjectModal = ({addjob, formClose}) => {
     const [job, setJob] = useState({
         id: 0,
         job_type: "",
@@ -18,9 +18,9 @@ const ObjectModal = ({addjob}) => {
     }
 
     const handleFormClose = (e)=>{
-        
+        e.preventDefault();
+        formClose();
     }
-
 
     return(
         <div className="modal">
@@ -35,7 +35,7 @@ const ObjectModal = ({addjob}) => {
                 <input type="text" onChange={(e)=>setJob((prevValue)=>({...prevValue, name: e.target.value}))}></input>
 
                 <button onClick={handleFormSubmit}>Add job request</button>
-                <button >Close modal</button>
+                <button onClick={handleFormClose}>Close modal</button>
             </form>
         </div>
     )

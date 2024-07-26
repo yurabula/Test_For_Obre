@@ -5,6 +5,8 @@ import { getFromLocalStorage } from "../localStorage/localStorage";
 const DashBoard = () => {
   const data = getFromLocalStorage("jobs")
 
+  console.log(data)
+
   function sortJob(jobs) {
     const pending = [];
     const completed = [];
