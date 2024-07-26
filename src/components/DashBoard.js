@@ -24,6 +24,7 @@ const DashBoard = () => {
       description: "Fix kitchen washer",
       name: "Mark",
     },
+    
   ];
 
   function sortJob(jobs) {
@@ -46,15 +47,17 @@ const DashBoard = () => {
   const sortedJobs = sortJob(data);
 
   return (
-    <div>
+    <div className="dashBoard">
       <p>DashBoard</p>
-      <div>
-        <div>
+      <div className="jobDesk">
+        <div className="completedDesk">
+            <p>Completed</p>
           {sortedJobs.completed.map((job) => (
             <JobObject key={job.id} job={job} />
           ))}
         </div>
-        <div>
+        <div className="pendingDesk">
+            <p>Pending</p>
           {sortedJobs.pending.map((job) => (
             <JobObject key={job.id} job={job} />
           ))}

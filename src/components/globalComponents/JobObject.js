@@ -1,11 +1,13 @@
 import "./JobObject.css"
 
 const JobObject=({job})=>{
+
+
     return(
         <div className="JobObject">
-            <p>{job.job_type}</p>
-            <p>{job.description}</p>
-            <p>{job.name}</p>
+            <h3>{job.job_type}</h3>
+            <p className="description">{job.description}</p>
+            <p className="name">{job.name}</p>
         </div>
     )
 }

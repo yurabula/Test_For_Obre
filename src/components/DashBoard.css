@@ -1,0 +1,12 @@
+.dashBoard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobDesk{
+    height: min-content;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
