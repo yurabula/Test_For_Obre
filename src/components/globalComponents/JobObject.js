@@ -1,8 +1,6 @@
 import "./JobObject.css"
 
 const JobObject=({job})=>{
-
-
     return(
         <div className="JobObject">
             <h3>{job.job_type}</h3>

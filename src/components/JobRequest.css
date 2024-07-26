@@ -1,0 +1,30 @@
+.jobRequest{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonWraper{
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonWraper button{
+    border-radius: 7px;
+}
+
+.buttonWraper p{
+    font-size: 18px;
+}
+
+.jobsWraper{
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}

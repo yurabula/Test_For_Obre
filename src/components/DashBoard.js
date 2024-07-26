@@ -1,31 +1,9 @@
 import "./DashBoard.css";
 import JobObject from "./globalComponents/JobObject";
+import { getFromLocalStorage } from "../localStorage/localStorage";
 
 const DashBoard = () => {
-  const data = [
-    {
-      id: 1,
-      job_type: "Electrical",
-      status: "pending",
-      description: "Fix broken led light",
-      name: "Joe",
-    },
-    {
-      id: 2,
-      job_type: "Plumbing",
-      status: "pending",
-      description: "Fix cold regulator",
-      name: "John",
-    },
-    {
-      id: 3,
-      job_type: "Water",
-      status: "completed",
-      description: "Fix kitchen washer",
-      name: "Mark",
-    },
-    
-  ];
+  const data = getFromLocalStorage("jobs")
 
   function sortJob(jobs) {
     const pending = [];
@@ -45,6 +23,7 @@ const DashBoard = () => {
   }
 
   const sortedJobs = sortJob(data);
+
 
   return (
     <div className="dashBoard">

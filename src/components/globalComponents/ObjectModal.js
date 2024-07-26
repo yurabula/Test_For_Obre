@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { addItemToLocalStorage, getFromLocalStorage } from "../../localStorage/localStorage";
+import "./ObjectModal.css"
 
 const ObjectModal = ({addjob}) => {
-
-
     const [job, setJob] = useState({
         id: 0,
         job_type: "",
@@ -14,20 +14,28 @@ const ObjectModal = ({addjob}) => {
     const handleFormSubmit =  (e)=>{
         e.preventDefault();
         addjob(job)
-        setJob({
-            id: 0,
-            job_type: "",
-            status: "",
-            description: "",
-            name: "",})
+        addItemToLocalStorage("jobs", job)
+    }
+
+    const handleFormClose = (e)=>{
+        
     }
 
 
     return(
-        <div>
-            <form>
-                <input type="text" onChange={(e)=>setJob((prevValue)=>({...prevValue, job_type: e.target.value}))}></input>
-                <button onClick={handleFormSubmit}></button>
+        <div className="modal">
+            <form className="addNewJobModal">
+                <h3>Add new job request</h3>
+                <input type="text" onChange={(e)=>setJob((prevValue)=>({...prevValue, name: e.target.value}))}></input>
+                <input type="text" onChange={(e)=>setJob((prevValue)=>({...prevValue, description: e.target.value}))}></input>
+                <select onChange={(e)=>setJob((prevValue)=>({...prevValue, status: e.target.value}))}>
+                    <option>pending</option>
+                    <option>completed</option>
+                </select>
+                <input type="text" onChange={(e)=>setJob((prevValue)=>({...prevValue, name: e.target.value}))}></input>
+
+                <button onClick={handleFormSubmit}>Add job request</button>
+                <button >Close modal</button>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 import JobObject from "./globalComponents/JobObject";
 import ObjectModal from "./globalComponents/ObjectModal";
 import { useState } from "react";
+import "./JobRequest.css"
 
 const JobRequest = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -12,12 +13,19 @@ const JobRequest = () => {
     };
 
     return (
-        <div>
-            <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
+        <div className="jobRequest">
+            <div className="buttonWraper">
+                <p>Add new job request</p>
+                <button onClick={() => setModalIsOpen(true)}>Add new job request</button>
+            </div>
             {modalIsOpen && <ObjectModal addjob={addJob} />}
-            {jobs.map((job) => (
+
+            <div className="jobsWraper">
+                {jobs.map((job) => (
                 <JobObject key={job.id} job={job} />
             ))}
+            </div>
+            
         </div>
     );
 };
