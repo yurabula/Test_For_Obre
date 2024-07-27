@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./JobRequest.css";
 import {
   getFromLocalStorage,
+  removeItemFromLocalStorage,
   saveToLocalStorage,
 } from "../../localStorage/localStorage";
 
@@ -19,7 +20,6 @@ const JobRequest = () => {
     const updatedJobs = [...jobs, job];
     setJobs(updatedJobs);
     saveToLocalStorage("jobs", updatedJobs);
-    console.log(getFromLocalStorage("jobs"))
     setAddModal(false);
   };
 
@@ -40,8 +40,13 @@ const JobRequest = () => {
     );
     setJobs(updatedJobs);
     saveToLocalStorage("jobs", updatedJobs);
-    setEditModal(false);
-    setJobToEdit(null);
+    closeModal();
+  };
+
+  const deleteJob = (id) => {
+    const updatedJobs = jobs.filter((job) => job.id !== id);
+    setJobs(updatedJobs);
+    saveToLocalStorage("jobs", updatedJobs);
   };
 
   return (
@@ -54,7 +59,7 @@ const JobRequest = () => {
       </div>
       {addModal && 
       <AddJobModal 
-            addjob={addJob} 
+            addJob={addJob} 
             formClose={closeModal} 
         />}
       {editModal && (
@@ -69,7 +74,8 @@ const JobRequest = () => {
           <JobObject
             key={job.id}
             job={job}
-            onClick={() => handleEditClick(job)}
+            editHandler={() => handleEditClick(job)}
+            deleteHandler={() => deleteJob(job.id)}
           />
         ))}
       </div>

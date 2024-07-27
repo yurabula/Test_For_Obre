@@ -1,6 +1,6 @@
 .JobObject{
     width: 250px;
-    height: 170px;
+    height: 200px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -36,6 +36,7 @@
 .JobObject button{
     width: 170px;
     height: 30px;
+    margin-top: 5px;
     font-size: 14px;
     border-radius: 10px;
     border: 0px;
