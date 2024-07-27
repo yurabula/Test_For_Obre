@@ -1,26 +1,27 @@
-.navigation{
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f3f3ea;
-    color:#244235;
-    
+.navigation {
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f3f3ea;
+  color: #244235;
+  
 }
 
-.buttons{
-    width: auto;
-    display: flex;
-    gap: 50px;
-    
-}
-.button{
-    text-decoration: none;
-    color: inherit;
+.buttons {
+  width: auto;
+  display: flex;
+  gap: 50px;
 
 }
 
-.logo{
-    font-size: 26px;
+.button {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.logo {
+  font-size: 26px;
 
 }

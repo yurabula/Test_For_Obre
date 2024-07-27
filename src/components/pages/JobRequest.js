@@ -23,17 +23,6 @@ const JobRequest = () => {
     setAddModal(false);
   };
 
-  const closeModal = () => {
-    setAddModal(false);
-    setEditModal(false);
-    setJobToEdit(null);
-  };
-
-  const handleEditClick = (job) => {
-    setJobToEdit(job);
-    setEditModal(true);
-  };
-
   const updateJob = (updatedJob) => {
     const updatedJobs = jobs.map((job) =>
       job.id === updatedJob.id ? updatedJob : job
@@ -49,19 +38,24 @@ const JobRequest = () => {
     saveToLocalStorage("jobs", updatedJobs);
   };
 
+  const closeModal = () => {
+    setAddModal(false);
+    setEditModal(false);
+    setJobToEdit(null);
+  };
+
+  const handleEditClick = (job) => {
+    setJobToEdit(job);
+    setEditModal(true);
+  };
+
   return (
     <div className="jobRequest">
       <div className="buttonWrapper">
         <p>Add new job request</p>
-        <button onClick={() => setAddModal(true)}>
-          Add new job request
-        </button>
+        <button onClick={() => setAddModal(true)}>Add new job request</button>
       </div>
-      {addModal && 
-      <AddJobModal 
-            addJob={addJob} 
-            formClose={closeModal} 
-        />}
+      {addModal && <AddJobModal addJob={addJob} formClose={closeModal} />}
       {editModal && (
         <EditJobModal
           job={jobToEdit}
