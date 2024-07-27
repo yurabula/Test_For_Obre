@@ -3,19 +3,17 @@ import JobObject from "./globalComponents/JobObject";
 import { getFromLocalStorage } from "../localStorage/localStorage";
 
 const DashBoard = () => {
-  const data = getFromLocalStorage("jobs")
-
-  console.log(data)
+  const data = getFromLocalStorage("jobs");
 
   function sortJob(jobs) {
     const pending = [];
     const completed = [];
 
     jobs.forEach((job) => {
-      if (job.status === "pending") {
+      if (job.status === "Pending") {
         pending.push(job);
       }
-      if (job.status === "completed") {
+      if (job.status === "Completed") {
         completed.push(job);
       }
     });
@@ -26,19 +24,18 @@ const DashBoard = () => {
 
   const sortedJobs = sortJob(data);
 
-
   return (
     <div className="dashBoard">
       <p>DashBoard</p>
       <div className="jobDesk">
         <div className="completedDesk">
-            <p>Completed</p>
+          <p>Completed</p>
           {sortedJobs.completed.map((job) => (
             <JobObject key={job.id} job={job} />
           ))}
         </div>
         <div className="pendingDesk">
-            <p>Pending</p>
+          <p>Pending</p>
           {sortedJobs.pending.map((job) => (
             <JobObject key={job.id} job={job} />
           ))}
