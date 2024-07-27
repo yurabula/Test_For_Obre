@@ -1,5 +1,5 @@
 import "./DashBoard.css";
-import JobObject from "../globalComponents/JobObject";
+import JobObjectWithoutButtons from "../globalComponents/JobObjects/JobObjectWithoutButtons";
 import { getFromLocalStorage } from "../../localStorage/localStorage";
 
 const DashBoard = () => {
@@ -29,13 +29,13 @@ const DashBoard = () => {
         <div className="completedDesk">
           <p>Completed</p>
           {sortedJobs.completed.map((job) => (
-            <JobObject key={job.id} job={job} />
+            <JobObjectWithoutButtons key={job.id} job={job} />
           ))}
         </div>
         <div className="pendingDesk">
           <p>Pending</p>
           {sortedJobs.pending.map((job) => (
-            <JobObject key={job.id} job={job} />
+            <JobObjectWithoutButtons key={job.id} job={job} />
           ))}
         </div>
       </div>

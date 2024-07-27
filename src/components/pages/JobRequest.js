@@ -1,11 +1,10 @@
-import JobObject from "../globalComponents/JobObject";
+import JobObjectWithButtons from "../globalComponents/JobObjects/JobObjectWithButtons";
 import AddJobModal from "../globalComponents/modalWindows/AddJobModal";
 import EditJobModal from "../globalComponents/modalWindows/EditJobModal";
 import { useState } from "react";
 import "./JobRequest.css";
 import {
   getFromLocalStorage,
-  removeItemFromLocalStorage,
   saveToLocalStorage,
 } from "../../localStorage/localStorage";
 
@@ -65,7 +64,7 @@ const JobRequest = () => {
       )}
       <div className="jobsWrapper">
         {jobs.map((job) => (
-          <JobObject
+          <JobObjectWithButtons
             key={job.id}
             job={job}
             editHandler={() => handleEditClick(job)}

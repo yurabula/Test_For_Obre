@@ -1,7 +1,6 @@
-import "./JobObject.css"
-import jobMethods from "../pages/JobRequest";
+import "./JobObjectWithButtons.css"
 
-const JobObject=({job, editHandler, deleteHandler})=>{
+const JobObjectWithButtons=({job, editHandler, deleteHandler})=>{
 
     return(
         <div className="JobObject" >
@@ -14,4 +13,4 @@ const JobObject=({job, editHandler, deleteHandler})=>{
     )
 }
 
-export default JobObject;
+export default JobObjectWithButtons;
