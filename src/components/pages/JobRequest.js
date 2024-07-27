@@ -1,12 +1,12 @@
-import JobObject from "./globalComponents/JobObject";
-import ObjectModal from "./globalComponents/ObjectModal";
-import EditJobModal from "./globalComponents/EditJobModal";
+import JobObject from "../globalComponents/JobObject";
+import AddJobModal from "../globalComponents/modalWindows/AddJobModal";
+import EditJobModal from "../globalComponents/modalWindows/EditJobModal";
 import { useState } from "react";
 import "./JobRequest.css";
 import {
   getFromLocalStorage,
   saveToLocalStorage,
-} from "../localStorage/localStorage";
+} from "../../localStorage/localStorage";
 
 const JobRequest = () => {
   const prevJobs = getFromLocalStorage("jobs") || [];
@@ -52,7 +52,7 @@ const JobRequest = () => {
         </button>
       </div>
       {modalIsOpen && 
-      <ObjectModal 
+      <AddJobModal 
             addjob={addJob} 
             formClose={closeModal} 
         />}

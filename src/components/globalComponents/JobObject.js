@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./JobObject.css"
 
 const JobObject=({job, onClick})=>{

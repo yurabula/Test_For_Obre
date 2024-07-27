@@ -1,12 +1,11 @@
 import { useState } from "react";
 import {
   addItemToLocalStorage,
-  getFromLocalStorage,
-} from "../../localStorage/localStorage";
-import "./ObjectModal.css";
+} from "../../../localStorage/localStorage";
+import "./AddJobModal.css";
 import { v4 } from "uuid";
 
-const ObjectModal = ({ addjob, formClose }) => {
+const AddJobModal = ({ addjob, formClose }) => {
   const [job, setJob] = useState({
     id: v4(),
     job_type: "",
@@ -70,4 +69,4 @@ const ObjectModal = ({ addjob, formClose }) => {
     </div>
   );
 };
-export default ObjectModal;
+export default AddJobModal;

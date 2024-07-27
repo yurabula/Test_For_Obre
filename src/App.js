@@ -1,9 +1,9 @@
 import "./App.css";
-import Login from "./components/Login";
+import Login from "./components/pages/Login";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Navigation from "./components/globalComponents/Navigation";
-import DashBoard from "./components/DashBoard";
-import JobRequest from "./components/JobRequest";
+import DashBoard from "./components/pages/DashBoard";
+import JobRequest from "./components/pages/JobRequest";
 
 function App() {
   return (
