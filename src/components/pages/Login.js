@@ -30,14 +30,14 @@ const Login = () => {
           value={userData.email}
           type="email"
           onChange={(e) => handleInputChange("email", e.target.value)}
-          placeholder="Enter your email here"
+          placeholder="  Enter your email here"
           className=""
         ></input>
         <input
           value={userData.password}
           type="password"
           onChange={(e) => handleInputChange("password", e.target.value)}
-          placeholder="Enter your password here"
+          placeholder="  Enter your password here"
           className=""
         ></input>
         <p>Forgot password?</p>

@@ -3,7 +3,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #E6E8E6;
+    background-color: #f3f3ea;
+    color:#244235;
+    
 }
 
 .buttons{
@@ -15,9 +17,10 @@
 .button{
     text-decoration: none;
     color: inherit;
-    
+
 }
 
 .logo{
     font-size: 26px;
+
 }

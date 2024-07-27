@@ -10,7 +10,7 @@ import {
 
 const JobRequest = () => {
   const prevJobs = getFromLocalStorage("jobs") || [];
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [addModal, setAddModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [jobs, setJobs] = useState(prevJobs);
   const [jobToEdit, setJobToEdit] = useState(null);
@@ -19,11 +19,12 @@ const JobRequest = () => {
     const updatedJobs = [...jobs, job];
     setJobs(updatedJobs);
     saveToLocalStorage("jobs", updatedJobs);
-    setModalIsOpen(false);
+    console.log(getFromLocalStorage("jobs"))
+    setAddModal(false);
   };
 
   const closeModal = () => {
-    setModalIsOpen(false);
+    setAddModal(false);
     setEditModal(false);
     setJobToEdit(null);
   };
@@ -47,11 +48,11 @@ const JobRequest = () => {
     <div className="jobRequest">
       <div className="buttonWrapper">
         <p>Add new job request</p>
-        <button onClick={() => setModalIsOpen(true)}>
+        <button onClick={() => setAddModal(true)}>
           Add new job request
         </button>
       </div>
-      {modalIsOpen && 
+      {addModal && 
       <AddJobModal 
             addjob={addJob} 
             formClose={closeModal} 

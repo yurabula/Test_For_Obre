@@ -17,7 +17,6 @@ const AddJobModal = ({ addjob, formClose }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     addjob(job);
-    addItemToLocalStorage("jobs", job);
   };
 
   const handleFormClose = (e) => {
@@ -31,14 +30,14 @@ const AddJobModal = ({ addjob, formClose }) => {
         <h3>Add new job request</h3>
         <input
           type="text"
-          placeholder={"Enter job type here"}
+          placeholder={" Job type"}
           onChange={(e) =>
             setJob((prevValue) => ({ ...prevValue, job_type: e.target.value }))
           }
         ></input>
         <input
           type="text"
-          placeholder="Enter description here"
+          placeholder=" Description "
           onChange={(e) =>
             setJob((prevValue) => ({
               ...prevValue,
@@ -51,13 +50,13 @@ const AddJobModal = ({ addjob, formClose }) => {
             setJob((prevValue) => ({ ...prevValue, status: e.target.value }))
           }
         >
-          <option>Choose status here</option>
+          <option> Choose status </option>
           <option>Pending</option>
-          <option>Complete</option>
+          <option>Completed</option>
         </select>
         <input
           type="text"
-          placeholder="Type worker name here"
+          placeholder=" Worker name"
           onChange={(e) =>
             setJob((prevValue) => ({ ...prevValue, name: e.target.value }))
           }

@@ -25,7 +25,7 @@ const DashBoard = () => {
 
   return (
     <div className="dashBoard">
-      <p>DashBoard</p>
+      <h3>DashBoard</h3>
       <div className="jobDesk">
         <div className="completedDesk">
           <p>Completed</p>

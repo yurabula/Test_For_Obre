@@ -2,7 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #244235;
+
 }
+
+.dashBoard p{
+    font-size: 20px;
+}
+
+.dashBoard h3{
+    font-size: 22px;
+    font-weight: 400;
+}
+
 
 .jobDesk{
     height: min-content;
